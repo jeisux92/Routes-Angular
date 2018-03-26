@@ -1,11 +1,13 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
-export let Router: Routes = [
-    { path: '**', component: HomeComponent },
-    { path: 'crisis-center', component: HomeComponent }
+const Router: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: 'users', component: UsersComponent },
+    { path: '**', component: NotFoundComponent },
 ];
 
-RouterModule.forRoot(Router, { useHash: true })
-
+export const RoutesApp = RouterModule.forRoot(Router, { useHash: true });
 
